@@ -5,3 +5,7 @@
  * Date: 15-Mar-17
  * Time: 13:08
  */
+require_once 'conf.php';
+
+
+?>

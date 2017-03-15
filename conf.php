@@ -6,4 +6,9 @@
  * Time: 13:12
  */
 
+define('CLASSES_DIR','classes/');
+define('TMPL_DIR','tmpl/');
+
+
+
 ?>
