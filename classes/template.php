@@ -12,17 +12,18 @@ var $file = '';
 var $content = false;
 var $vars = array();
 
+    function construct($f){
+        $this->file=$f;
+        $this->loadFile();
+    }
 
-function readFile($f){
 
-    $this->content = file_get_contents($f);
 
-}
 
 function loadFile(){
     $f = $this->file;
     if(!is_dir(TMPL_DIR)){
-        echo 'Kataloogi '.TMPL_DIR.'ei ole leitud.<br>';
+        echo 'Kataloogi '.TMPL_DIR.'ei ole leitud.<br/>';
         exit;
 
     }
@@ -37,14 +38,16 @@ function loadFile(){
     }
     if ($this->content === false){
         echo 'Ei suutnud lugeda failis '.$this->file.'<br />';
+
     }
 
 }
 
-function construct($f){
-    $this->file=$f;
-    $this->loadFile();
-}
+    function readFile($f){
+
+        $this->content = file_get_contents($f);
+
+    }
 
 }
 ?>
