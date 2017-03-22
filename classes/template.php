@@ -19,5 +19,21 @@ function readFile($f){
 
 }
 
+function loadFile(){
+    $f = $this->file;
+    if(!is_dir(TMPL_DIR)){
+        echo 'Kataloogi '.TMPL_DIR.'ei ole leitud.<br>';
+        exit;
+
+    }
+    if (file_exists($f) and is_file($f) and is_readable($f)){
+        $this->readFile($f);
+    }
+    if ($this->content === false){
+        echo 'Ei suutnud lugeda faili '.$this->file.'<br />';
+    }
+
+}
+
 }
 ?>
