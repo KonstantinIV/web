@@ -30,7 +30,7 @@ function loadFile(){
         $this->readFile($f);
     }
     if ($this->content === false){
-        echo 'Ei suutnud lugeda faili '.$this->file.'<br />';
+        echo 'Ei suutnud lugeda failis '.$this->file.'<br />';
     }
 
 }
