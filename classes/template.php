@@ -46,7 +46,7 @@ class template
             echo 'Ei suutnud lugeda failis '.$this->file.'<br />';
 
         }
-        echo 'TERE';
+
 
     }
 
@@ -55,6 +55,21 @@ class template
         $this->content = file_get_contents($f);
 
     }
+
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }// set
+
+
+
+    function parse(){
+        $str = $this->content;
+        foreach ($this->vars as $name=>$val){
+            $str = str_replace('{'.$name.'}', $val, $str);
+        }
+        // return template content with real values
+        return $str;
+    }// parse
 
 }
 ?>
