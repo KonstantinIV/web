@@ -35,5 +35,10 @@ function loadFile(){
 
 }
 
+function construct($f){
+    $this->file=$f;
+    $this->loadFile();
+}
+
 }
 ?>
