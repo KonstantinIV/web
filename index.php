@@ -7,5 +7,5 @@
  */
 require_once 'conf.php';
 
-
+echo "<h1>Programmeerimise esileht</h1>";
 ?>
