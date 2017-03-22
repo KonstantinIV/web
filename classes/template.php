@@ -13,6 +13,11 @@ var $content = false;
 var $vars = array();
 
 
+function readFile($f){
+
+    $this->content = file_get_contents($f);
+
+}
 
 }
 ?>
