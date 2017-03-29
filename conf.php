@@ -11,12 +11,18 @@ define('TMPL_DIR','tmpl/');
 
 require_once CLASSES_DIR . 'template.php';
 require_once CLASSES_DIR . 'http.php';
+require_once CLASSES_DIR . 'linkobjects.php';
 
-$http = new http();
-$http->init();
+$http = new linkobjects();
 
+
+/*
 echo '<pre>';
 print_r($http);
 echo '</pre>';
+*/
+echo REMOTE_ADDR;
+
+
 
 ?>

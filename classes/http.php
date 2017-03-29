@@ -10,13 +10,19 @@ class http{
     var $vars = array();
     var $server = array();
 
+    function __construct(){
+        $this->init();
+        $this->initCont();
+    }
+
+
     function init(){
         $this->vars = array_merge($_GET, $_POST, $_FILES);
         $this->server = $_SERVER;
 
     }
 
-    function initCont{
+    function initCont(){
         $consts = array('REMOTE_ADDR', 'HTTP_POST', 'PHP_SELF', 'SCRIPT_NAME');
         foreach ($consts as $const){
             if(!defined($const) and isset($this->server[$const])){
