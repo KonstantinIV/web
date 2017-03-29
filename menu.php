@@ -11,6 +11,11 @@ $menu = new template('menu.menu'); // in menu directory is file menu.html menu/m
 $item = new template('menu.item');
 
 
-
-
+$item->set('name', 'esimene');
+$menu->set('items', $item->parse());
+$item->set('name', 'teine');
+$menu->add('items', $item->parse());
+// kontrollime objekti olemasolu ja sisu
+// kui soovime pidevat asendamist, siis set funktsioon add asemel
+$main_tmpl->add('menu', $menu->parse());
 ?>

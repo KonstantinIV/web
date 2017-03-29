@@ -12,7 +12,7 @@ class template
     var $content = false;
     var $vars = array();
 
-    function construct($f){
+    function __construct($f){
         $this->file=$f;
         $this->loadFile();
     }
@@ -23,7 +23,7 @@ class template
     function loadFile(){
         $f = $this->file;
         if(!is_dir(TMPL_DIR)){
-            echo 'Kataloogi '.TMPL_DIR.'ei ole leitud.<br/>';
+            echo 'Kataloogi '.TMPL_DIR.'ei ole leitud.<br>';
             exit;
 
         }
@@ -48,7 +48,7 @@ class template
 
 
         if ($this->content === false){
-            echo 'Ei suutnud lugeda failis '.$this->file.'<br />';
+            echo 'Ei suutnud lugeda failis '.$this->file.'<br>';
 
         }
 
@@ -72,9 +72,7 @@ class template
 
         }else{
             $this->vars[$name] = $this->vars[$name];
-
         }
-
     }
 
 
