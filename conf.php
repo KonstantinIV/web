@@ -10,15 +10,16 @@ define('CLASSES_DIR','classes/');
 define('TMPL_DIR','tmpl/');
 define('LIB_DIR', 'lib/');
 define('ACTS_DIR', 'acts/');
+define ('DEFAULT_ACT', 'default');
 
 require_once LIB_DIR.'utils.php';
 
 
-require_once CLASSES_DIR . 'template.php';
-require_once CLASSES_DIR . 'http.php';
-require_once CLASSES_DIR . 'linkobjects.php';
+require_once CLASSES_DIR.'template.php';
+require_once CLASSES_DIR.'http.php';
+require_once CLASSES_DIR.'linkobject.php';
 
-$http = new linkobjects();
+$http = new linkobject();
 
 
 /*
