@@ -13,7 +13,7 @@ define('ACTS_DIR', 'acts/');
 define ('DEFAULT_ACT', 'default');
 
 require_once LIB_DIR.'utils.php';
-
+require_once 'db_conf.php';
 
 require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
@@ -29,5 +29,5 @@ print_r($http);
 echo '</pre>';
 */
 // testime linkobjecti tööd
-//$db = new mysql();
+$db = new mysql(DB_HOST, DB_USER,DB_PASS ,DB_NAME);
 ?>
