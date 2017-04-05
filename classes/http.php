@@ -35,6 +35,19 @@ class http{
         }
     }
 
+
+    function get($name){
+        if($this->vars[$name]){
+            return $this->vars[$name];
+        }
+        return false;
+
+}
+
+
+
+
+
 }
 
 ?>

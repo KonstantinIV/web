@@ -9,6 +9,7 @@
 define('CLASSES_DIR','classes/');
 define('TMPL_DIR','tmpl/');
 define('LIB_DIR', 'lib/');
+define('ACTS_DIR', 'acts/');
 
 require_once LIB_DIR.'utils.php';
 
@@ -25,9 +26,6 @@ echo '<pre>';
 print_r($http);
 echo '</pre>';
 */
-echo REMOTE_ADDR;
-
-echo $http->baseUrl.'<br />';
-echo $http->getLink(array('kasutaja'=>'admin', 'pass'=>'qwerty'));
+// testime linkobjecti tööd
 
 ?>

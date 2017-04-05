@@ -15,7 +15,7 @@ class linkobjects extends http {
     function __construct(){
 
         parent::__construct();
-        $this->baseUrl = $this->protocol.HTTP_POST.SCRIPT_NAME;
+        $this->baseUrl = $this->protocol."HTTP_POST".SCRIPT_NAME;
 
     }
 
@@ -25,7 +25,7 @@ class linkobjects extends http {
 
         }
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
-
+        return $link;
 
 
     }
@@ -48,7 +48,7 @@ class linkobjects extends http {
 
 
 
-t
+
 
 
 

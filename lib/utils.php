@@ -1,10 +1,9 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: Konstantin
  * Date: 05-Apr-17
- * Time: 08:54
+ * Time: 09:02
  */
 class utils
 {
@@ -12,3 +11,4 @@ class utils
         return urlencode($val);
     }
 }
+?>
