@@ -18,6 +18,7 @@ require_once LIB_DIR.'utils.php';
 require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkobject.php';
+require_once CLASSES_DIR.'mysql.php';
 
 $http = new linkobject();
 
@@ -28,5 +29,5 @@ print_r($http);
 echo '</pre>';
 */
 // testime linkobjecti tööd
-
+//$db = new mysql();
 ?>

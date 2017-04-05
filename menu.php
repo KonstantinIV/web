@@ -12,8 +12,17 @@ $item = new template('menu.item');
 
 
 $item->set('name', 'esimene');
+$link = $http->getLink(array('act'=>'first'));
+
+$item->set('link', $link);
 $menu->set('items', $item->parse());
+
+
 $item->set('name', 'teine');
+$link = $http->getLink(array('act'=>'second'));
+$item->set('link', $link);
+
+
 $menu->add('items', $item->parse());
 // kontrollime objekti olemasolu ja sisu
 // kui soovime pidevat asendamist, siis set funktsioon add asemel

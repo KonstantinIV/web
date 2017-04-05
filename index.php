@@ -18,10 +18,13 @@ $main_tmpl = new template('main');
 $main_tmpl->set('user', 'Kasutajanimi');
 $main_tmpl->set('title', 'Pealeht');
 $main_tmpl->set('lang_bar', 'Keeleriba');
-$main_tmpl->set('menu','Peamenüü' );
+$main_tmpl->set('menu','Lehe peamenüü' );
 
 require_once 'menu.php';
-$main_tmpl->set('content', 'lehe sisu');
+
+require_once 'act.php';
+
+//$main_tmpl->set('content', 'Lehe sisu');
 $main_tmpl->set('site_title', 'Veebiprogemise kursus');
 
 
@@ -29,5 +32,8 @@ echo $main_tmpl->parse();
 
 
 //echo '</pre>';
+
+
+
 
 ?>

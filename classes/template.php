@@ -71,7 +71,7 @@ class template
             $this->set($name, $val);
 
         }else{
-            $this->vars[$name] = $this->vars[$name];
+            $this->vars[$name] = $this->vars[$name].$val;
         }
     }
 
