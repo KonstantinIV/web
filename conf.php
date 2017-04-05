@@ -8,6 +8,10 @@
 
 define('CLASSES_DIR','classes/');
 define('TMPL_DIR','tmpl/');
+define('LIB_DIR', 'lib/');
+
+require_once LIB_DIR.'utils.php';
+
 
 require_once CLASSES_DIR . 'template.php';
 require_once CLASSES_DIR . 'http.php';
@@ -23,6 +27,7 @@ echo '</pre>';
 */
 echo REMOTE_ADDR;
 
-
+echo $http->baseUrl.'<br />';
+echo $http->getLink(array('kasutaja'=>'admin', 'pass'=>'qwerty'));
 
 ?>

@@ -8,6 +8,7 @@
 class linkobjects extends http {
     var $baseUrl = false;
     var $delim   = '$amp;';
+    var $eq      = '=';
     var $protocol = 'http://';
 
 
@@ -24,17 +25,30 @@ class linkobjects extends http {
 
         }
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
-        return $link;
+
 
 
     }
+    function getLink($add = array()){
+        $link = '';
+        foreach($add as $name=>$val){
+            $this->addToLink($link, $name, $val);
+        }
+        if($link != ''){
+            $link = $this->baseUrl.'?'.$link;
+        } else {
+            $link = $this->baseUrl;
+        }
+        return $link;
+    }// getLink
+
 
 }
 
 
 
 
-
+t
 
 
 
