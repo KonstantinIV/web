@@ -11,6 +11,8 @@ class linkobject extends http {
     var $eq      = '=';
     var $protocol = 'http://';
 
+    var $aie = array('lang_id');
+
 
     function __construct(){
 
@@ -29,11 +31,29 @@ class linkobject extends http {
 
 
     }
-    function getLink($add = array()){
+    function getLink($add = array(), $aie = array(),$not=array()){
         $link = '';
         foreach($add as $name=>$val){
             $this->addToLink($link, $name, $val);
         }
+        //Keelevahetus
+
+        foreach($aie as $name){
+            $val = $this->get($name);
+            if($val != false){
+                $this->addToLink($link,$name,$val);
+            }
+        }
+
+        foreach($this->$aie as $name){
+            $val = $this->get($name);
+            if($val != false and !in_array($name, $not)){
+                $this->addToLink($link,$name,$val);
+            }
+        }
+
+
+
         if($link != ''){
             $link = $this->baseUrl.'?'.$link;
         } else {

@@ -20,9 +20,19 @@ $main_tmpl->set('title', 'Pealeht');
 $main_tmpl->set('lang_bar', 'Keeleriba');
 $main_tmpl->set('menu','Lehe peamenüü' );
 
+
+//Keelevahetus
+$main_tmpl->set('lang_bar', LANG_ID);
+
+
+
+
 require_once 'menu.php';
 
 require_once 'act.php';
+
+
+require_once 'lang.php';
 
 //$main_tmpl->set('content', 'Lehe sisu');
 $main_tmpl->set('site_title', 'Veebiprogemise kursus');
