@@ -12,7 +12,6 @@
 class http{
     var $vars = array();
     var $server = array();
-    var $cookie = array();// cookie data
 
     function __construct(){
         $this->init();
