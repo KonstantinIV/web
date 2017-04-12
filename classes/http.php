@@ -12,6 +12,7 @@
 class http{
     var $vars = array();
     var $server = array();
+    var $cookie = array();// cookie data
 
     function __construct(){
         $this->init();
@@ -22,6 +23,7 @@ class http{
     function init(){
         $this->vars = array_merge($_GET, $_POST, $_FILES);
         $this->server = $_SERVER;
+        //$this->cookie = $_COOKIE; // cookie real data
 
     }
 

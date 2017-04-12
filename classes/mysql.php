@@ -33,6 +33,27 @@ class mysql{
         }
     }
 
+    function query($sql){
+        $res = mysqli_query($this->conn, $sql);
+        if($res == false){
+            echo 'Viga päringus!<br />';
+            echo '<b>'.$sql.'</b><br />';
+            echo mysqli_error($this->conn).'<br />';
+            exit;
+        }
+        return $res;
+    }// query
 
+    function getArray($sql){
+        $res = $this->query($sql);
+        $data = array();
+        while($row = mysqli_fetch_assoc($res)){
+            $data[] = $row;
+        }
+        if(count($data) == 0){
+            return false;
+        }
+        return $data;
+    }// getArray
 
 }

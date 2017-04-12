@@ -30,4 +30,9 @@ echo '</pre>';
 */
 // testime linkobjecti tööd
 $db = new mysql(DB_HOST, DB_USER,DB_PASS ,DB_NAME);
+
+$res = $db->getArray('SELECT NOW()');
+echo '<pre>';
+print_r($res);
+echo '</pre>';
 ?>
