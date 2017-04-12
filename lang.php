@@ -20,7 +20,7 @@ foreach ($siteLangs as $lang_id=>$lang_name){
     // koostame keele riba väljund
     $link = $http->getLink(array('lang_id'=>$lang_id), array('act', 'page_id'), array('lang_id'));
     $item->set('link', $link);
-    $item->set('name', tr($lang_name));
+    $item->set('name', $lang_name);
     $main_tmpl->add('lang_bar', $item->parse());
     if($count < count($siteLangs)){
         $main_tmpl->add('lang_bar', $sep);

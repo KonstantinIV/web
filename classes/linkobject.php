@@ -7,7 +7,7 @@
  */
 class linkobject extends http {
     var $baseUrl = false;
-    var $delim   = '$amp;';
+    var $delim   = '&amp;';
     var $eq      = '=';
     var $protocol = 'http://';
 
@@ -21,7 +21,7 @@ class linkobject extends http {
 
     }
 
-    function addToLink($link,$name,$val){
+    function addToLink(&$link,$name,$val){
         if($link != ''){
             $link = $link.$this->delim;
 
@@ -45,7 +45,7 @@ class linkobject extends http {
             }
         }
 
-        foreach($this->$aie as $name){
+        foreach($this->aie as $name){
             $val = $this->get($name);
             if($val != false and !in_array($name, $not)){
                 $this->addToLink($link,$name,$val);
