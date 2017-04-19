@@ -13,18 +13,17 @@ var $vars = [];
 var $http = false;
 var $db   = false;
 var $anonymous   = true;
+var $timeout = 1800;
 
 function __construct(&$http, &$db)
 {
 $this->http = &$http;
 $this->db = &$db;
 $this->createSession();
-$this->cleanSession();
-
+$this->clearSessions();
 
 
 $this->sid = $http->get('sid');
-var $timeout = 1800;
 
 }
 
@@ -44,11 +43,26 @@ function createSession($user = false){
     $this->http->set('sid', $sid);
 }
 
-function clearSession(){
+function clearSessions(){
     $sql = 'DELETE FROM session WHERE '.time().'- UNIX_TIMESTAMP(changed) > '.$this->timeout;
     $this->db->query($sql);
 }
 
 
+    function checkSession(){
+    $this->clearSessions();
+    if($this->sid === false and $this->anonymous){
+        $this->createSession();
 
+    }
+
+    if($this->sid !== false){
+        $sql = 'SELECT * FROM session WHERE '.'sid='.fixDb($this->sid);
+        $res = $this->db->getArray($sql);
+
+        if ($res == false){
+
+        }
+    }
+    }
 }

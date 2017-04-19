@@ -50,6 +50,14 @@ class http{
         $this->vars[$name] = $val;
     }// set
 
+    function del($name){
+        if (isset($this->vars[$name])){
+            unset($this->vars[$name]);
+        }
+
+
+    }// set
+
 
 }
 
