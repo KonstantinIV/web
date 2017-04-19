@@ -19,8 +19,12 @@ function __construct(&$http, &$db)
 $this->http = &$http;
 $this->db = &$db;
 $this->createSession();
-$this->sid = $http->get('sid');
+$this->cleanSession();
 
+
+
+$this->sid = $http->get('sid');
+var $timeout = 1800;
 
 }
 
@@ -40,7 +44,10 @@ function createSession($user = false){
     $this->http->set('sid', $sid);
 }
 
-
+function clearSession(){
+    $sql = 'DELETE FROM session WHERE '.time().'- UNIX_TIMESTAMP(changed) > '.$this->timeout;
+    $this->db->query($sql);
+}
 
 
 
