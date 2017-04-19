@@ -18,6 +18,9 @@ function __construct(&$http, &$db)
 {
 $this->http = &$http;
 $this->db = &$db;
+$this->createSession();
+$this->sid = $http->get('sid');
+
 
 }
 
