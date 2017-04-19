@@ -34,7 +34,7 @@ require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
 require_once CLASSES_DIR.'linkobject.php';
 require_once CLASSES_DIR.'mysql.php';
-
+require_once CLASSES_DIR.'session.php';
 
 //Keelevahetus
 
@@ -49,12 +49,18 @@ $http = new linkobject();
 
 
 $db = new mysql(DB_HOST, DB_USER,DB_PASS ,DB_NAME);
-/*
-$res = $db->getArray('SELECT NOW()');
+$sess = new session($http, $db);
+
+
+
+
+
+
+//$res = $db->getArray('SELECT NOW()');
 echo '<pre>';
-print_r($res);
+print_r($sess);
 echo '</pre>';
-*/
+
 //$sess = new session($http, $db);
 
 $lang_id = $http->get('lang_id');
