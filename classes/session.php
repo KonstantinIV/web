@@ -19,8 +19,7 @@ function __construct(&$http, &$db)
 {
 $this->http = &$http;
 $this->db = &$db;
-$this->createSession();
-$this->clearSessions();
+$this->checkSession();
 
 
 $this->sid = $http->get('sid');
@@ -61,8 +60,26 @@ function clearSessions(){
         $res = $this->db->getArray($sql);
 
         if ($res == false){
+            if ($this->anonymous){
+                $this->createSession();
 
+            } else {
+                $this->sid = false;
+                $this->http->del('sid');
+            }
+
+        }else{
+           // $this->
+            $vars = unserialize($res[0]['svars']);
+            if (!is_array($vars)){
+                $vars = array();
+            }
+            $this->vars=$vars;
+            $user_data  = unserialize($res[0]['user_data']);
+            $this->user_data = $user_data;
         }
+    }else{
+
     }
     }
 }
