@@ -16,7 +16,7 @@ echo '<h1>Programmeerimise esileht</h1>';
 $main_tmpl = new template('main');
 require_once 'lang.php';
 
-$main_tmpl->set('user', 'Kasutajanimi');
+$main_tmpl->set('user', $sess->user_data['username']);
 $main_tmpl->set('title', 'Pealeht');
 
 $main_tmpl->set('menu','Lehe peamenüü' );
@@ -43,7 +43,7 @@ echo $main_tmpl->parse();
 
 //echo '</pre>';
 
-
+$sess->flush();
 
 
 ?>
