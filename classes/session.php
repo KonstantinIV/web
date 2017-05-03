@@ -140,5 +140,17 @@ function clearSessions(){
 
 
 
+    function delSession(){
+        if($this->sid != false){
+            $sql = 'DELETE FROM session '. 'WHERE sid='.fixDb($this->sid);
+            $this->db->query($sql);
+            $this->sid = false;
+            $this->http->del('sid');
+
+        }
+    }
+
+
+
 
 }
