@@ -30,8 +30,19 @@ if($res != false){
     }
 }
 
+if(USER_ID == ROLE_NONE){
+    $item->set('name', tr('Logi sisse'));
+    $link = $http->getLink(array('act'=>'login'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse());
+}
 
-
+if(USER_ID != ROLE_NONE){
+    $item->set('name', tr('Logi välja'));
+    $link = $http->getLink(array('act'=>'logout'));
+    $item->set('link', $link);
+    $menu->add('items', $item->parse());
+}
 
 
 
