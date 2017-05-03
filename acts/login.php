@@ -6,6 +6,11 @@
  * Time: 09:15
  */
 $login = new template('login');
+
+
+$error = $sess->get('error');
+$login->set('error', $error);
+
 $login->set('kasutajanimi', 'Kasutaja');
 $login->set('parool', 'Parool');
 $login->set('nupp', 'Logi sisse');

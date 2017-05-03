@@ -18,6 +18,8 @@ $sql = 'SELECT * FROM user'.
 
     if($res == false){
 
+        $sess->set('error', 'Probleem sisselogimisega');
+
         $link = $http->getLink(array('act' => 'login'));
         $http->redirect($link);
     } else {
