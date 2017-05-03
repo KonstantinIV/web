@@ -112,4 +112,33 @@ function clearSessions(){
 
         }
     }
+
+    function set($name, $val){
+        $this->vars[$name] = $val;
+
+    }
+
+    function get($name){
+        if(isset($this->vars[$name])){
+            return $this->vars[$name];
+
+
+
+        }
+        return false;
+
+    }
+
+    function del($name){
+        if(isset($this->vars[$name])){
+            unset($this->vars[$name]);
+
+
+
+        }
+    }
+
+
+
+
 }
