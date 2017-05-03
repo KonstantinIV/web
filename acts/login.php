@@ -5,8 +5,8 @@
  * Date: 03-May-17
  * Time: 09:15
  */
-
-$login->set('kasutjanimi', 'Kasutaja');
+$login = new template('login');
+$login->set('kasutajanimi', 'Kasutaja');
 $login->set('parool', 'Parool');
 $login->set('nupp', 'Logi sisse');
 
