@@ -24,7 +24,9 @@ define('ROLE_ADMIN',1);
 define('ROLE_USER',2);
 
 define('DEFAULT_LANG','et');
-
+define('ROLE_NONE', 0);
+define('ROLE_ADMIN', 1);
+define('ROLE_USER', 2);
 
 
 
