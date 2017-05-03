@@ -18,6 +18,8 @@ $sql = 'SELECT * FROM user'.
 
     if($res == false){
 
+        $link = $http->getLink(array('act' => 'login'));
+        $http->redirect($link);
     } else {
         $sess->createSession($res[0]);
 
